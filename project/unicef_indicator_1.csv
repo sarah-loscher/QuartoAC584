@@ -1,0 +1,78 @@
+country,alpha_2_code,alpha_3_code,numeric_code,indicator,time_period,obs_value,sex,unit_multiplier,unit_of_measure,observation_status,observation_confidentaility,time_period_activity_related_to_when_the_data_are_collected,current_age
+Albania,AL,ALB,8,Adolescent poverty,2017,32.0979118347168,Female,,%,,,,Total
+Angola,AO,AGO,24,Adolescent poverty,2015,83.27264785766602,Female,,%,,,,Total
+Argentina,AR,ARG,32,Adolescent poverty,2019,26.739203836395394,Female,,%,,,,Total
+Armenia,AM,ARM,51,Adolescent poverty,2015,34.735411405563354,Female,,%,,,,Total
+Barbados,BB,BRB,52,Adolescent poverty,2012,16.088514829503165,Female,,%,,,,Total
+Belize,BZ,BLZ,84,Adolescent poverty,2016,48.79680871963501,Female,,%,,,,Total
+Benin,BJ,BEN,204,Adolescent poverty,2017,94.236820936203,Female,,%,,,,Total
+Bosnia and Herzegovina,BA,BIH,70,Adolescent poverty,2011,13.15084993839264,Female,,%,,,,Total
+Burkina Faso,BF,BFA,854,Adolescent poverty,2010,93.12173128128052,Female,,%,,,,Total
+Burundi,BI,BDI,108,Adolescent poverty,2016,83.93349051475525,Female,,%,,,,Total
+Cambodia,KH,KHM,116,Adolescent poverty,2014,86.70340776443481,Female,,%,,,,Total
+Cameroon,CM,CMR,120,Adolescent poverty,2018,83.13907384872437,Female,,%,,,,Total
+Central African Republic,CF,CAF,140,Adolescent poverty,2019,97.12298512458801,Female,,%,,,,Total
+Chad,TD,TCD,148,Adolescent poverty,2019,95.16170024871826,Female,,%,,,,Total
+Colombia,CO,COL,170,Adolescent poverty,2015,34.76964755847338,Female,,%,,,,Total
+Comoros,KM,COM,174,Adolescent poverty,2012,85.45190691947937,Female,,%,,,,Total
+Congo,CG,COG,178,Adolescent poverty,2015,85.5870246887207,Female,,%,,,,Total
+Costa Rica,CR,CRI,188,Adolescent poverty,2018,19.257275760173798,Female,,%,,,,Total
+Cuba,CU,CUB,192,Adolescent poverty,2019,26.365745067596436,Female,,%,,,,Total
+Côte d'Ivoire,CI,CIV,384,Adolescent poverty,2016,86.31003499031067,Female,,%,,,,Total
+Ivory Coast,CI,CIV,384,Adolescent poverty,2016,86.31003499031067,Female,,%,,,,Total
+"Congo, the Democratic Republic of the",CD,COD,180,Adolescent poverty,2018,96.22533321380615,Female,,%,,,,Total
+Dominican Republic,DO,DOM,214,Adolescent poverty,2019,33.102423375625975,Female,,%,,,,Total
+Egypt,EG,EGY,818,Adolescent poverty,2014,42.011284828186035,Female,,%,,,,Total
+El Salvador,SV,SLV,222,Adolescent poverty,2014,54.72224950790405,Female,,%,,,,Total
+Swaziland,SZ,SWZ,748,Adolescent poverty,2014,73.77052307128906,Female,,%,,,,Total
+Gabon,GA,GAB,266,Adolescent poverty,2012,75.7752537727356,Female,,%,,,,Total
+Gambia,GM,GMB,270,Adolescent poverty,2018,73.65540266036987,Female,,%,,,,Total
+Ghana,GH,GHA,288,Adolescent poverty,2017,89.10516500473022,Female,,%,,,,Total
+Guatemala,GT,GTM,320,Adolescent poverty,2015,76.45268440246582,Female,,%,,,,Total
+Guinea,GN,GIN,324,Adolescent poverty,2018,89.18970823287964,Female,,%,,,,Total
+Guinea-Bissau,GW,GNB,624,Adolescent poverty,2019,93.81421208381653,Female,,%,,,,Total
+Guyana,GY,GUY,328,Adolescent poverty,2019,44.03102993965149,Female,,%,,,,Total
+Haiti,HT,HTI,332,Adolescent poverty,2016,86.35555505752563,Female,,%,,,,Total
+Honduras,HN,HND,340,Adolescent poverty,2011,68.02998781204224,Female,,%,,,,Total
+India,IN,IND,356,Adolescent poverty,2015,81.82730674743652,Female,,%,,,,Total
+Kenya,KE,KEN,404,Adolescent poverty,2014,92.66318678855896,Female,,%,,,,Total
+Kiribati,KI,KIR,296,Adolescent poverty,2019,85.21345853805542,Female,,%,,,,Total
+Kyrgyzstan,KG,KGZ,417,Adolescent poverty,2018,36.640724539756775,Female,,%,,,,Total
+Lao People's Democratic Republic,LA,LAO,418,Adolescent poverty,2017,68.18356513977051,Female,,%,,,,Total
+Lesotho,LS,LSO,426,Adolescent poverty,2018,82.62749314308167,Female,,%,,,,Total
+Liberia,LR,LBR,430,Adolescent poverty,2019,88.24493885040283,Female,,%,,,,Total
+Madagascar,MG,MDG,450,Adolescent poverty,2018,96.0044264793396,Female,,%,,,,Total
+Malawi,MW,MWI,454,Adolescent poverty,2015,82.00927972793579,Female,,%,,,,Total
+Maldives,MV,MDV,462,Adolescent poverty,2016,40.26722609996796,Female,,%,,,,Total
+Mali,ML,MLI,466,Adolescent poverty,2018,89.92215991020203,Female,,%,,,,Total
+Mauritania,MR,MRT,478,Adolescent poverty,2015,87.2965931892395,Female,,%,,,,Total
+Mexico,MX,MEX,484,Adolescent poverty,2015,40.611788630485535,Female,,%,,,,Total
+Mongolia,MN,MNG,496,Adolescent poverty,2018,68.662029504776,Female,,%,,,,Total
+Mozambique,MZ,MOZ,508,Adolescent poverty,2011,90.31090140342712,Female,,%,,,,Total
+Myanmar,MM,MMR,104,Adolescent poverty,2016,85.74835062026978,Female,,%,,,,Total
+Burma,MM,MMR,104,Adolescent poverty,2016,85.74835062026978,Female,,%,,,,Total
+Namibia,,NAM,516,Adolescent poverty,2013,76.14482045173645,Female,,%,,,,Total
+Nepal,NP,NPL,524,Adolescent poverty,2019,54.77697253227234,Female,,%,,,,Total
+Niger,NE,NER,562,Adolescent poverty,2012,96.88102602958679,Female,,%,,,,Total
+Nigeria,NG,NGA,566,Adolescent poverty,2018,87.65361905097961,Female,,%,,,,Total
+Pakistan,PK,PAK,586,Adolescent poverty,2018,88.29858899116516,Female,,%,,,,Total
+Papua New Guinea,PG,PNG,598,Adolescent poverty,2017,91.01388454437256,Female,,%,,,,Total
+Paraguay,PY,PRY,600,Adolescent poverty,2016,42.86344647407532,Female,,%,,,,Total
+Peru,PE,PER,604,Adolescent poverty,2013,60.59035658836365,Female,,%,,,,Total
+"Moldova, Republic of",MD,MDA,498,Adolescent poverty,2012,59.69774127006531,Female,,%,,,,Total
+Rwanda,RW,RWA,646,Adolescent poverty,2015,81.94175958633423,Female,,%,,,,Total
+Sao Tome and Principe,ST,STP,678,Adolescent poverty,2019,70.23940682411194,Female,,%,,,,Total
+Senegal,SN,SEN,686,Adolescent poverty,2019,74.83851909637451,Female,,%,,,,Total
+Sierra Leone,SL,SLE,694,Adolescent poverty,2019,89.72906470298767,Female,,%,,,,Total
+South Africa,ZA,ZAF,710,Adolescent poverty,2016,59.71109867095947,Female,,%,,,,Total
+Suriname,SR,SUR,740,Adolescent poverty,2018,42.850977182388306,Female,,%,,,,Total
+Tajikistan,TJ,TJK,762,Adolescent poverty,2017,62.78030276298523,Female,,%,,,,Total
+Timor-Leste,TL,TLS,626,Adolescent poverty,2016,64.43153023719788,Female,,%,,,,Total
+Togo,TG,TGO,768,Adolescent poverty,2017,91.20842814445496,Female,,%,,,,Total
+Tonga,TO,TON,776,Adolescent poverty,2019,35.47482192516327,Female,,%,,,,Total
+Tunisia,TN,TUN,788,Adolescent poverty,2018,31.083405017852783,Female,,%,,,,Total
+Turks and Caicos Islands,TC,TCA,796,Adolescent poverty,2019,17.60825841263734,Female,,%,,,,Total
+Uganda,UG,UGA,800,Adolescent poverty,2016,95.94259858131409,Female,,%,,,,Total
+"Tanzania, United Republic of",TZ,TZA,834,Adolescent poverty,2015,87.42145895957947,Female,,%,,,,Total
+Yemen,YE,YEM,887,Adolescent poverty,2013,87.34341263771057,Female,,%,,,,Total
+Zambia,ZM,ZMB,894,Adolescent poverty,2018,89.78867530822754,Female,,%,,,,Total

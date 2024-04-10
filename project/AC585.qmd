@@ -1,0 +1,176 @@
+---
+title: "Journey of VitalSigns: Navigating Global Trends in Health, Wealth, and Well-being"
+subtitle: "A Comprehensive Analysis of UNICEF Data"
+author: "Sarah Jane Loscher"
+date: "2024-04-02"
+format: 
+  html:
+    theme: minty
+    backgroundcolor: "#FFD1DC"
+    toc: true
+    number-sections: true
+execute: 
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# libraries
+library(tidyverse)
+library(plotly)
+
+#data
+unicef_indicator_1 <- read_csv("unicef_indicator_1.csv")
+unicef_metadata <- read_csv("unicef_metadata.csv")
+
+#transformations
+metadata <- unicef_metadata %>%
+  rename('population' = 'Population, total', 'LifeExp'= "Life expectancy at birth, total (years)", 'gdppercap' = "GDP per capita (constant 2015 US$)" )
+
+full_join <- full_join(unicef_indicator_1, metadata, by = c("time_period" = "year", "country" = "country" ))
+full_join_2021 <- filter(full_join, time_period == 2021)
+full_join_2021_countries <- filter(full_join, 
+                                   !(country %in% c("India", "China", "Egypt", "Kenya", "Mexico", "United States")))
+full_join_countries <- filter(full_join, !(country %in% c("India", "China", "Egypt", "Kenya", "Mexico", "United States")))
+newfilter_2021_countries <- filter(full_join, 
+                                   time_period == 2021, 
+                                   country %in% c("India", "China", "Egypt", "Kenya", "Mexico", "United States"))
+
+map_world <- map_data("world")
+options(scipen = 999)
+```
+
+Welcome to the [***Journey of VitalSigns***]{style="color: orange;"} dashboard, an exploration of global dynamics in [*health, wealth, and well-being*]{style="color: orange;"} over the last twenty years. Embark on a visual expedition as we navigate through interconnected data from [**UNICEF**]{style="color: blue;"}, revealing the fascinating tapestry of our world's socio-economic landscape.
+
+[**Unicef**]{style="color: blue;"} 
+: Originally called the United Nations International Children's Emergency Fund in full, now officially United Nations Children's Fund, is an agency of the United Nations responsible for providing humanitarian and developmental aid to children worldwide.
+
+* [***Aims of this dashboard***]{style="color: red;"} 
+    + Assessment of Healthcare Access
+    + Monitoring Health Outcomes
+        - We look at countries like India against the United States
+    + Identification of Vulnerable Populations: 
+
+# Taking a Worldwide View
+
+## Global Population Diversity
+
+Explore the distribution of [**world population in 2021**]{style="color: red;"} across countries in this interactive map. The colour intensity of each country represents its population size, with darker shades indicating larger populations. [*China and India*]{style="color: purple;"} stand out due to their significant populations. Their dark red colour reflects their immense demographic impact on the global population landscape.
+
+```{r}
+map_join_2021 <- full_join(full_join_2021, map_world, by = c("country" = "region"))
+ ggplot(data = map_join_2021) +
+    aes(x = long, y = lat, group = group, fill = population) +
+    geom_polygon() +
+    scale_fill_gradient(low = "pink", high = "red", na.value = "grey") +
+    labs(
+      title = "Countries and their population in 2021",
+      subtitle = "Countries in grey have no data, red means a higher population", 
+      x = "Longitude",
+      y = "Latitude",
+      fill = "Country Population"
+    ) +
+      theme_bw() +
+  theme(text = element_text(family = "Arial"))
+```
+
+## Children receiving ORT around the globe
+
+```{r}
+#| fig-cap: "The map presents an overview of countries and the <span style='color: red;'>**average percentage of children (under 5 years old) with diarrhoea who received ORT (oral rehydration salts or recommended homemade fluids or increased fluids) and continued feeding**</span> over the past twenty years. As you explore, take note of how the colour of each country corresponds to its proportion; the darker the shade, the greater the number. There is a large percentage of children in <span style='color: purple;'>*India*</span> receiving ORT treatment, which is indicated on the map by the purple colour. The country faces a number of issues, including healthcare access and poverty."
+map_join_xobv <- full_join(unicef_indicator_1, map_world, by = c("country" = "region"))
+ggplot(data = map_join_xobv) +
+    aes(x = long, y = lat, group = group, fill = obs_value) +
+    geom_polygon() +
+    scale_fill_gradient(low = "pink", high = "purple", na.value = "grey") +
+  labs(
+    title = "Percentage of children with diarrhoea who received ORT over the past 20 years",
+    subtitle = "Countries in grey have no data, purple means a higher population", 
+    x = "Longitude",
+    y = "Latitude",
+    fill = "Indicator %"
+  ) +
+  theme_bw() +
+  theme(text = element_text(family = "Arial"))
+```
+
+# Evolution of Population
+
+```{r}
+#| fig-cap: "Use the time series chart to explore <span style='color: red;'>**population trends**</span> by hovering over data points to view specific figures for each year. Contrast population growth trends between countries like <span style='color: purple;'>*India and China*</span>, with rapidly increasing populations, and those like <span style='color: purple;'>*Egypt, Mexico, the United States, and Kenya*</span> showing more stable growth. <span style='color: purple;'>*India and China*</span> exhibit growth over the past two decades with their upward trendlines. <span style='color: purple;'>*India's*</span> significant population size aligns with a higher percentage of children requiring ORT treatment." 
+timeseries_plot_1 <- metadata %>%
+  ggplot() +
+  aes(year, population, group = country, colour = country) +
+  geom_line() +
+  labs(
+    title = "Time series showing the population over the past 20 years",
+    subtitle = "Different countries shown in different colours", 
+    x = "Year",
+    y = "Population"
+  ) +
+  theme_bw() +
+  theme(legend.position = "right",
+        text = element_text(family = 'Arial')) +
+  scale_color_manual(name = "Country", 
+                     values = rainbow(length(unique(metadata$country))),
+                     breaks = unique(metadata$country))
+ggplotly(timeseries_plot_1)
+```
+
+# Relationship between Life Expectancy and ORT Treatment
+
+```{r}
+#| fig-cap: "The scatterplot shows an interesting <span style='color: red;'>**correlation between ORT treatment and life expectancy in 2021**</span>. Lower percentages of children receiving treatment is found in countries like <span style='color: purple;'>*the United States*</span> demonstrating longer life expectancies, reflecting better healthcare accessibility and quality. Conversely, <span style='color: purple;'>*Chad and Nigeria*</span>, with higher levels of ORT treatment being given to children, exhibit lower life expectancies due to limited economic resources hindering healthcare investments. This disparity underscores the high need for ORT treatment among vulnerable groups of children." 
+scatterplot_1 <- ggplot(full_join_2021_countries) +
+  aes(LifeExp,obs_value,color = country, size = population) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(aes(group = 1), method = "lm", se = FALSE) +
+  labs(
+    title = "Life expectancy against the % of children who received ORT in 2021",
+    x = "Life expectancy at birth",
+    y = "Indicator %"
+  ) +
+  theme_bw() +
+guides(colour = "none") 
+text = element_text(family = 'Arial')
+ggplotly(scatterplot_1)
+```
+
+# Average Life Expectancy
+
+Next, explore [**life expectancy disparities**]{style="color: red;"} across selected countries in 2021 with the bar chart. [*India and Kenya*]{style="color: purple;"} exhibit lower life expectancies, reflecting the impact of poverty on public health. Limited access to healthcare, sanitation, and nutrition contributes to shorter life spans in these regions. In contrast, countries like [*China and the United States*]{style="color: purple;"} boast higher life expectancies, reflecting their socio-economic prosperity and robust healthcare systems.
+
+```{r}
+barchart <- newfilter_2021_countries %>%
+  group_by(country) %>%
+  summarise(mean_lifeexp = mean(LifeExp, na.rm = TRUE)) %>%
+  ggplot() +
+  aes(reorder(country, mean_lifeexp), mean_lifeexp, fill = country) +
+  geom_col() +
+  labs(x = "Country", 
+       y = "Average Life Expectancy", 
+       title = "Barchart of average life expectancy") +
+  theme_bw() +
+  theme(text = element_text(family = 'Arial'))
+  ggplotly(barchart)
+```
+
+## You can change these figures and help a young child by contacting your local policy makers!
+```{mermaid}
+flowchart LR
+  A[It starts with you!] --> B(Governments)
+  B --> C{Decision}
+  C --> D[End Poverty]
+  C --> E[No change]
+```
+
+# Conclusion
+
+This dashboard highlights healthcare disparities between nations, emphasizing the critical importance of timely interventions like ORT therapy in combating childhood illnesses and reducing mortality rates. By prioritizing initiatives that enhance healthcare access, alleviate poverty, and empower marginalized populations, [**we can strive towards a future where every child has the opportunity to thrive and lead a healthy life.**]{style="color: orange;"}
+Vist <https://www.unicef.ie/stories/7-facts-about-child-poverty-everyone-should-know/> to find out more!
+
+![](Screenshot%202024-02-06%20at%2013.39.08.png){fig-align="center" width="150"}
